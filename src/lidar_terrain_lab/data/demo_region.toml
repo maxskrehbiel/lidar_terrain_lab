@@ -1,0 +1,40 @@
+# Example study area for running the pipeline on real, public USGS 3DEP LiDAR.
+#
+# The box sits about 3.5 km inside the boundary of the Wichita Mountains National Wildlife
+# Refuge (Comanche County, Oklahoma), federal land managed by the U.S. Fish and Wildlife
+# Service. `lidar_terrain_lab fetch` and `run --fetch` use this file when no --config is
+# given; tiles are downloaded at run time and never committed. To study another public area,
+# copy this file, change [region], and pass the copy with --config.
+
+[region]
+name = "Wichita Mountains NWR sample area"
+land_status = "Federal public land: U.S. Fish and Wildlife Service national wildlife refuge."
+bbox_wgs84 = [-98.6841, 34.7466, -98.6775, 34.7520]  # west, south, east, north (about 600 m square)
+notes = "Illustrative area only; no results for it are included in this repository."
+
+[pipeline]
+resolution_m = 1.0
+
+[pipeline.ground]
+# "auto" trusts the ground class (2) that 3DEP deliveries carry; "pmf" re-derives it.
+method = "auto"
+max_window_m = 20.0
+terrain_slope = 0.45  # granite knobs in this area are steeper than the synthetic scene
+initial_threshold_m = 0.3
+max_threshold_m = 3.0
+tolerance_m = 0.25
+
+[pipeline.canopy]
+max_height_m = 40.0
+pit_fill_m = 1.5
+
+[pipeline.hydrology]
+channel_threshold_ha = 1.0
+sink_report_depth_m = 0.1
+
+[pipeline.vegetation]
+breaks_m = [0.5, 2.0, 5.0]
+names = ["Open", "Shrub", "Small tree", "Tree"]
+colors = ["#f1efe6", "#8cbb5c", "#4a8f3f", "#1c552d"]
+woody = ["Shrub", "Small tree", "Tree"]
+treatment = ["Shrub", "Small tree"]

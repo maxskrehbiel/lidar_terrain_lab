@@ -1,0 +1,5 @@
+{"type":"FeatureCollection","features":[
+{"type":"Feature","properties":{"name":"Unit A","note":"synthetic management unit"},"geometry":{"type":"Polygon","coordinates":[[[0.00519215,0.00903487],[0.00655626,0.00903489],[0.00626904,0.01264884],[0.00519211,0.01264882],[0.00519215,0.00903487]]]}},
+{"type":"Feature","properties":{"name":"Unit B","note":"synthetic management unit"},"geometry":{"type":"Polygon","coordinates":[[[0.00655626,0.00903489],[0.00777677,0.0090349],[0.00756135,0.01264885],[0.00626904,0.01264884],[0.00655626,0.00903489]]]}},
+{"type":"Feature","properties":{"name":"Unit C","note":"synthetic management unit"},"geometry":{"type":"Polygon","coordinates":[[[0.00777677,0.0090349],[0.00878191,0.0090349],[0.00878187,0.01264887],[0.00756135,0.01264885],[0.00777677,0.0090349]]]}}
+]}

@@ -1,0 +1,335 @@
+{
+  "title": "Synthetic demo",
+  "data": {
+    "label": "SYNTHETIC",
+    "source": "Generated point cloud (seed 7): a 400 m x 400 m scene with rolling terrain, a meandering channel, a tributary, and scattered shrubs and trees.",
+    "notes": "Not a real place: the scene is georeferenced beside 0 N, 0 E, in open ocean, so it cannot be confused with real land."
+  },
+  "software": "lidar_terrain_lab 0.1.0",
+  "grid": {
+    "crs": "EPSG:32631",
+    "resolution_m": 1.0,
+    "width": 400,
+    "height": 400
+  },
+  "statistics": {
+    "points_total": 1097422,
+    "points_noise": 50,
+    "points_ground": 889059,
+    "ground_method": "pmf",
+    "point_density_per_m2": 6.8586,
+    "ground_density_per_m2": 5.5566,
+    "dem_interpolated_percent": 1.3362,
+    "area_acres": 39.5369,
+    "area_hectares": 16.0,
+    "resolution_m": 1.0,
+    "elevation_min_m": 312.7128,
+    "elevation_max_m": 332.5824,
+    "relief_m": 19.8696,
+    "slope_mean_deg": 5.1541,
+    "slope_share_percent": {
+      "0-5": 60.6869,
+      "5-10": 33.5619,
+      "10-20": 4.3175,
+      ">20": 1.4338
+    },
+    "canopy_max_m": 11.942,
+    "woody_acres": 5.9535,
+    "woody_percent": 15.0581,
+    "treatment_classes": [
+      "Shrub",
+      "Small tree"
+    ],
+    "treatment_acres": 4.9787,
+    "channel_threshold_ha": 0.48,
+    "channel_length_m": 1069.6144,
+    "channel_reaches": 15,
+    "max_strahler_order": 2,
+    "largest_contributing_area_ha": 13.6544,
+    "sink_acres": 0.1626,
+    "max_sink_depth_m": 0.3437
+  },
+  "vegetation_classes": [
+    {
+      "name": "Open",
+      "cells": 135907,
+      "acres": 33.5834,
+      "hectares": 13.5907,
+      "percent": 84.9419,
+      "woody": false,
+      "treatment": false,
+      "label": "Open (<0.5 m)",
+      "color": "#f1efe6"
+    },
+    {
+      "name": "Shrub",
+      "cells": 12620,
+      "acres": 3.1185,
+      "hectares": 1.262,
+      "percent": 7.8875,
+      "woody": true,
+      "treatment": true,
+      "label": "Shrub (0.5-2 m)",
+      "color": "#8cbb5c"
+    },
+    {
+      "name": "Small tree",
+      "cells": 7528,
+      "acres": 1.8602,
+      "hectares": 0.7528,
+      "percent": 4.705,
+      "woody": true,
+      "treatment": true,
+      "label": "Small tree (2-5 m)",
+      "color": "#4a8f3f"
+    },
+    {
+      "name": "Tree",
+      "cells": 3945,
+      "acres": 0.9748,
+      "hectares": 0.3945,
+      "percent": 2.4656,
+      "woody": true,
+      "treatment": false,
+      "label": "Tree (>5 m)",
+      "color": "#1c552d"
+    }
+  ],
+  "zones": [
+    {
+      "name": "Unit A",
+      "total_acres": 13.4425,
+      "woody_acres": 1.9341,
+      "treatment_acres": 1.6445,
+      "mean_slope_deg": 4.4485,
+      "class_acres": {
+        "Open": 11.5084,
+        "Shrub": 0.9837,
+        "Small tree": 0.6608,
+        "Tree": 0.2896
+      }
+    },
+    {
+      "name": "Unit B",
+      "total_acres": 13.8379,
+      "woody_acres": 2.2452,
+      "treatment_acres": 1.8538,
+      "mean_slope_deg": 5.681,
+      "class_acres": {
+        "Open": 11.5927,
+        "Shrub": 1.2239,
+        "Small tree": 0.6299,
+        "Tree": 0.3914
+      }
+    },
+    {
+      "name": "Unit C",
+      "total_acres": 12.2564,
+      "woody_acres": 1.7742,
+      "treatment_acres": 1.4804,
+      "mean_slope_deg": 5.333,
+      "class_acres": {
+        "Open": 10.4822,
+        "Shrub": 0.9108,
+        "Small tree": 0.5696,
+        "Tree": 0.2938
+      }
+    }
+  ],
+  "drainage_reaches": [
+    {
+      "strahler_order": 1,
+      "length_m": 101.397,
+      "contributing_area_ha": 1.2073
+    },
+    {
+      "strahler_order": 1,
+      "length_m": 86.8995,
+      "contributing_area_ha": 0.9632
+    },
+    {
+      "strahler_order": 1,
+      "length_m": 151.6102,
+      "contributing_area_ha": 1.5115
+    },
+    {
+      "strahler_order": 1,
+      "length_m": 29.3137,
+      "contributing_area_ha": 0.5195
+    },
+    {
+      "strahler_order": 2,
+      "length_m": 63.5269,
+      "contributing_area_ha": 8.21
+    },
+    {
+      "strahler_order": 2,
+      "length_m": 141.8234,
+      "contributing_area_ha": 13.6544
+    },
+    {
+      "strahler_order": 2,
+      "length_m": 1.4142,
+      "contributing_area_ha": 9.1733
+    },
+    {
+      "strahler_order": 2,
+      "length_m": 48.3137,
+      "contributing_area_ha": 11.6489
+    },
+    {
+      "strahler_order": 2,
+      "length_m": 193.7939,
+      "contributing_area_ha": 6.1964
+    },
+    {
+      "strahler_order": 2,
+      "length_m": 19.8284,
+      "contributing_area_ha": 2.1751
+    },
+    {
+      "strahler_order": 1,
+      "length_m": 2.8284,
+      "contributing_area_ha": 0.8287
+    },
+    {
+      "strahler_order": 2,
+      "length_m": 54.3553,
+      "contributing_area_ha": 1.3424
+    },
+    {
+      "strahler_order": 1,
+      "length_m": 3.0,
+      "contributing_area_ha": 0.4879
+    },
+    {
+      "strahler_order": 1,
+      "length_m": 134.8823,
+      "contributing_area_ha": 1.8582
+    },
+    {
+      "strahler_order": 1,
+      "length_m": 36.6274,
+      "contributing_area_ha": 0.7367
+    }
+  ],
+  "validation": [
+    {
+      "key": "ground_recall",
+      "name": "Ground returns labeled ground",
+      "value": 0.9987,
+      "limit": 0.97,
+      "passed": true,
+      "unit": "share",
+      "comparison": ">="
+    },
+    {
+      "key": "ground_commission",
+      "name": "Vegetation returns labeled ground",
+      "value": 0.0,
+      "limit": 0.01,
+      "passed": true,
+      "unit": "share",
+      "comparison": "<="
+    },
+    {
+      "key": "dem_rmse",
+      "name": "DEM error, all cells (RMSE)",
+      "value": 0.0295,
+      "limit": 0.1,
+      "passed": true,
+      "unit": "m",
+      "comparison": "<="
+    },
+    {
+      "key": "dem_rmse_under_crowns",
+      "name": "DEM error under crowns >2 m (RMSE)",
+      "value": 0.0401,
+      "limit": 0.2,
+      "passed": true,
+      "unit": "m",
+      "comparison": "<="
+    },
+    {
+      "key": "crown_top_error",
+      "name": "Crown-top height error (median, small trees and trees)",
+      "value": 0.0348,
+      "limit": 0.5,
+      "passed": true,
+      "unit": "m",
+      "comparison": "<="
+    },
+    {
+      "key": "area_error_shrub",
+      "name": "Shrub area error (3.31 ac true, 3.12 found)",
+      "value": 0.0593,
+      "limit": 0.15,
+      "passed": true,
+      "unit": "relative",
+      "comparison": "<="
+    },
+    {
+      "key": "area_error_small_tree",
+      "name": "Small tree area error (2.01 ac true, 1.86 found)",
+      "value": 0.0751,
+      "limit": 0.15,
+      "passed": true,
+      "unit": "relative",
+      "comparison": "<="
+    },
+    {
+      "key": "area_error_tree",
+      "name": "Tree area error (1.03 ac true, 0.97 found)",
+      "value": 0.0494,
+      "limit": 0.15,
+      "passed": true,
+      "unit": "relative",
+      "comparison": "<="
+    },
+    {
+      "key": "woody_area_error",
+      "name": "Woody area error (6.35 ac true, 5.95 found)",
+      "value": 0.0627,
+      "limit": 0.1,
+      "passed": true,
+      "unit": "relative",
+      "comparison": "<="
+    },
+    {
+      "key": "channel_coverage",
+      "name": "Lower-channel cross-sections with a drainage line",
+      "value": 1.0,
+      "limit": 0.95,
+      "passed": true,
+      "unit": "share",
+      "comparison": ">="
+    },
+    {
+      "key": "channel_offset_median",
+      "name": "Drainage line to true lower channel (median)",
+      "value": 0.1912,
+      "limit": 2.0,
+      "passed": true,
+      "unit": "m",
+      "comparison": "<="
+    },
+    {
+      "key": "channel_offset_p95",
+      "name": "Drainage line to true lower channel (95th pct)",
+      "value": 0.5179,
+      "limit": 5.0,
+      "passed": true,
+      "unit": "m",
+      "comparison": "<="
+    },
+    {
+      "key": "outlet_share",
+      "name": "Share of scene draining through the east outlet",
+      "value": 0.8534,
+      "limit": 0.5,
+      "passed": true,
+      "unit": "share",
+      "comparison": ">="
+    }
+  ]
+}

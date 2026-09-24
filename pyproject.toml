@@ -1,0 +1,88 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lidar_terrain_lab"
+version = "0.1.0"
+description = "Airborne LiDAR to bare-earth terrain, canopy height, drainage lines and vegetation-class acreage."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Maxwell Krehbiel" }]
+keywords = ["lidar", "3dep", "dem", "canopy-height-model", "hydrology", "gis"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "rasterio>=1.3.9",
+    "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+lidar = ["laspy[lazrs]>=2.5"]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff==0.16.8",
+    "mypy==2.3.1",
+    "laspy[lazrs]>=2.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/maxskrehbiel/lidar_terrain_lab"
+Repository = "https://github.com/maxskrehbiel/lidar_terrain_lab"
+Issues = "https://github.com/maxskrehbiel/lidar_terrain_lab/issues"
+
+[project.scripts]
+lidar_terrain_lab = "lidar_terrain_lab.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lidar_terrain_lab"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "N", "RUF", "PTH"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["lidar_terrain_lab"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+strict = true
+files = ["src"]
+
+[[tool.mypy.overrides]]
+module = ["scipy.*", "rasterio.*", "affine.*", "laspy.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -m 'not integration'"
+markers = [
+    "integration: needs network access to the public USGS 3DEP services (deselected by default)",
+]
+filterwarnings = [
+    # rasterio 1.4 composes transforms with Affine "*", which affine 3 flags for deprecation.
+    "ignore:Use `@` matmul:PendingDeprecationWarning",
+]
+
+[tool.coverage.run]
+source = ["lidar_terrain_lab"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
